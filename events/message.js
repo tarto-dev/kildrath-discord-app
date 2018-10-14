@@ -24,7 +24,7 @@ module.exports = (client, message) => {
                 },
                 {
                     "name": "Wowanalyser",
-                    "value": "https://wowanalyzer.com/report/" + reportId.split('/')[1]
+                    "value": "https://wowanalyzer.com/report/" + reportId.split('/')[2]
                 }
             ]
         };
