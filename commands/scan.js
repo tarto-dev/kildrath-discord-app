@@ -17,6 +17,10 @@ exports.run = async (client, message, args) => {
             {
                 "name": "Raider.io",
                 "value": `https://raider.io/characters/${region}/${realm}/${nickname}`
+            },
+            {
+                "name": "Wipefest",
+                "value": `https://www.wipefest.net/character/${nickname}/${realm}/${region}`
             }
         ]
     };
