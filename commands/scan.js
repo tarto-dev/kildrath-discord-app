@@ -16,7 +16,7 @@ exports.run = async (client, message, args) => {
             },
             {
                 "name": ":gear: Raider.io",
-                "value": `https://raider.io/characters/${region}/${realm}/${nickname}`
+                "value": `https://raider.io/characters/${region.toLowerCase()}/${realm.toLowerCase()}/${nickname}`
             },
             {
                 "name": ":crossed_swords: Wipefest",
