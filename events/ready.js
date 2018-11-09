@@ -19,5 +19,5 @@ module.exports = (client) => {
     };
 
     client.users.get(client.config.root_user).send({embed});
-    client.user.setActivity(`${client.config.prefix} - gère les logs de ${client.guilds.size} serveurs`);
+    client.user.setActivity(`${client.config.prefix} - gère les logs de ${client.guilds.size} serveurs - http://bot.benftwc.fr`);
 }
