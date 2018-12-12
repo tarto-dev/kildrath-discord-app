@@ -21,6 +21,10 @@ exports.run = (client, message, args) => {
                 "value": `Donne le lien Raiderio de la personne indiquée        _ex: ${client.config.prefix}rio Lachance_`
             },
             {
+                "name": "pets `Pseudo` `Royaume, défaut Hyjal`",
+                "value": `Permet d'avoir la liste des pets (+ prix de vente) du compte        _ex: ${client.config.prefix}pets Lachance_`
+            },
+            {
                 "name": "calendrier",
                 "value": `Indique les derniers runs de la guilde      _ex: ${client.config.prefix}calendrier_`
             },
