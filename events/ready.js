@@ -20,4 +20,5 @@ module.exports = (client) => {
 
     client.users.get(client.config.root_user).send({embed});
     client.user.setActivity(`${client.config.prefix} - gère les logs de ${client.guilds.size} serveurs`);
+    client.channels.get(client.config.log_discord_channel).send({embed});
 }
