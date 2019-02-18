@@ -1,6 +1,6 @@
 exports.run = (client, message, args) => {
     if(args.length === 0) {
-        message.channel.send(`https://raider.io/guilds/eu/hyjal/Donjons%20et%20Darons`);
+        message.channel.send(`https://raider.io/guilds/eu/hyjal/Les%20twoll%20malins`);
         return;
     }
 

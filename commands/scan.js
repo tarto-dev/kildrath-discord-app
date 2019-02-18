@@ -31,10 +31,3 @@ exports.run = async (client, message, args) => {
 
     message.channel.send({embed});
 };
-
-exports.help = {
-    name: "ping",
-    category: "Miscelaneous",
-    description: "It like... Pings. Then Pongs. And it's not Ping Pong.",
-    usage: "ping"
-};
