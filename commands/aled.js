@@ -37,10 +37,3 @@ exports.run = (client, message, args) => {
 
     message.channel.send({embed});
 }
-
-exports.help = {
-    name: "help",
-    category: "Miscelaneous",
-    description: "Permet d'obtenir de l'aide pour utiliser le bot",
-    usage: "aled"
-};
