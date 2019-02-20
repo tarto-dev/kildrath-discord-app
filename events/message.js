@@ -15,7 +15,7 @@ module.exports = (client, message) => {
         if (reportId === null || reportId === '') return;
 
         const embed = {
-            "title": `NOUVEAU LOG DISPONIBLE`,
+            "title": `NOUVEAU LOG DISPONIBLE - Soumis par ${message.author.nickname}`,
             "color": 4886754,
             "fields": [
                 {
