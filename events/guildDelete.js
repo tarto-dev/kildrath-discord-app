@@ -19,6 +19,6 @@ module.exports = (client, guild) => {
         ]
     };
 
-    //client.users.get(client.config.root_user).send({embed});
-    //client.channels.get(client.config.log_discord_channel).send({embed});
+    client.users.get(client.config.root_user).send({embed});
+    client.channels.get(client.config.log_discord_channel).send({embed});
 }
