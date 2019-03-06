@@ -1,0 +1,7 @@
+{
+    "token": "your-discord-application-token",
+    "prefix": "?",
+    "root_user": "root-user-id",
+    "log_discord_guild": "discord-server-id",
+    "log_discord_channel": "discord-channel-id"
+}
