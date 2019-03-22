@@ -1,6 +1,6 @@
 {
-  "name": "Kildrath",
-  "version": "1.0.0",
+  "name": "kildrath-bot",
+  "version": "2.0.0",
   "description": "Discord bot that handle warcraft logs ids",
   "main": "bot.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "warcraft",
     "discord",
     "benftwc",
-    "gilbot"
+    "kildrath"
   ],
   "author": "Benjamin \"Benftwc\" <benftwc@gmail.com>",
   "license": "WTFPL",
@@ -24,7 +24,8 @@
     "jsdom": "^11.12.0",
     "moment": "^2.22.2",
     "url": "^0.11.0",
-    "url-exists": "^1.0.3"
+    "url-exists": "^1.0.3",
+    "better-sqlite-pool": "^0.2.0"
   },
   "bugs": {
     "url": "https://gitlab.com/benftwc/kildrath-bot/issues"

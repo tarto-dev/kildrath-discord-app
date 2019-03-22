@@ -4,8 +4,24 @@ const fs = require("fs");
 
 const client = new Discord.Client();
 const config = require("./config.json");
-// We also need to make sure we're attaching the config to the CLIENT so it's accessible everywhere!
 client.config = config;
+
+// We also need to make sure we're attaching the config to the CLIENT so it's accessible everywhere!
+client.settings = new Enmap({
+    name: "settings",
+    fetchAll: false,
+    autoFetch: true,
+    cloneLevel: 'deep'
+});
+
+const defaultSettings = {
+    bot_name: "Kildrath",
+    prefix: "~"
+};
+client.defaultSettings = defaultSettings;
+
+// Merge both default & custom configs
+console.log(JSON.parse((JSON.stringify(client.defaultSettings) + JSON.stringify(client.config)).replace(/}{/g,",")))
 
 fs.readdir("./events/", (err, files) => {
     if (err) return console.error(err);
