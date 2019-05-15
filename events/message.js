@@ -22,7 +22,7 @@ module.exports = (client, message) => {
         if (reportId === null || reportId === '') return;
 
         const embed = {
-            "title": `NOUVEAU LOG DISPONIBLE - Soumis par ${message.author.name}`,
+            "title": `**Nouveaux logs**`,
             "color": 4886754,
             "fields": [
                 {
@@ -32,11 +32,15 @@ module.exports = (client, message) => {
                 {
                     "name": "Wowanalyser",
                     "value": "https://wowanalyzer.com/report/" + reportId.split('/')[2]
+                },
+                {
+                    "name": "Wipefest",
+                    "value": "https://www.wipefest.net/report/" + reportId.split('/')[2]
                 }
             ]
         };
 
-        message.channel.send({embed});
+        message.reply({embed});
     }
 
     // Ignore messages not starting with the prefix (in config.json if not overrided by guild)
