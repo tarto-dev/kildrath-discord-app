@@ -13,6 +13,10 @@ exports.run = (client, message, args) => {
                 "value": `Scan la personne indiquée.       _ex: ${client.config.prefix}scan Lachance_`
             },
             {
+                "name": "simc `Pseudo` `Royaume, défaut Hyjal` `Région, défaut EU`",
+                "value": `Effectue une simulation de DPS pour le personnage indiqué.       _ex: ${client.config.prefix}simc Lachance_`
+            },
+            {
                 "name": "armory `Pseudo` `Royaume, défaut Hyjal`",
                 "value": `Donne le lien Armory de la personne indiquée       _ex: ${client.config.prefix}armory Lachance_`
             },
