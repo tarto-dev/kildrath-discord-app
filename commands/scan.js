@@ -19,6 +19,10 @@ exports.run = async (client, message, args) => {
                 "value": `https://raider.io/characters/${region.toLowerCase()}/${realm.toLowerCase()}/${nickname}`
             },
             {
+                "name": ":robot: Simc / Raidbot",
+                "value": `https://www.raidbots.com/simbot/quick?region=${region.toLowerCase()}&realm=${realm.toLowerCase()}&name=${nickname}`
+            },
+            {
                 "name": ":crossed_swords: Wipefest",
                 "value": `https://www.wipefest.net/character/${nickname}/${realm}/${region}`
             },
