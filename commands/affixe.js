@@ -12,19 +12,19 @@ exports.run = (client, message, args) => {
             "fields": [
                 {
                     "name": affixes[0].name,
-                    "value": affixes[0].description
+                    "value": [affixes[0].description](affixes[0].wowhead_url)
                 },
                 {
                     "name": affixes[1].name,
-                    "value": affixes[1].description
+                    "value": [affixes[1].description](affixes[1].wowhead_url)
                 },
                 {
                     "name": affixes[2].name,
-                    "value": affixes[2].description
+                    "value": [affixes[2].description](affixes[2].wowhead_url)
                 },
                 {
                     "name": affixes[3].name,
-                    "value": affixes[3].description
+                    "value": [affixes[3].description](affixes[3].wowhead_url)
                 },
             ]
         };
