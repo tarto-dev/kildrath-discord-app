@@ -1,10 +1,9 @@
 exports.run = (client, message, args) => {
     const getJSON = require('get-json');
-    const moment = require('moment');
+    
+    const [region = "eu", ...rest] = args;
 
-    const [nickname, realm = "Hyjal", region = "eu", ...rest] = args;
-
-    getJSON(`https://raider.io/api/v1/mythic-plus/affixes?region=eu&locale=fr`, (err, rsp) => {
+    getJSON(`https://raider.io/api/v1/mythic-plus/affixes?region=${region}&locale=fr`, (err, rsp) => {
         let affixes = rsp.affix_details;
 
         const embed = {
