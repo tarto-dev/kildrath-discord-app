@@ -22,10 +22,6 @@ const defaultSettings = {
     faction: "horde"
 };
 client.defaultSettings = defaultSettings;
-
-// Merge both default & custom configs
-console.log(JSON.parse((JSON.stringify(client.defaultSettings) + JSON.stringify(client.config)).replace(/}{/g,",")))
-
 fs.readdir("./events/", (err, files) => {
     if (err) return console.error(err);
     files.forEach(file => {

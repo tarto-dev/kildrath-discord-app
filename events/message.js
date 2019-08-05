@@ -5,6 +5,9 @@ module.exports = (client, message) => {
 
     // Ensure we're using current guild's settings
     const guildConf = client.settings.ensure(message.guild.id, client.defaultSettings);
+
+    // Merge both default & custom configs
+    const _ = require('lodash');
     client.guildConf = guildConf;
 
     // Force `rcraftlogs.co` to prevent user messages catches
