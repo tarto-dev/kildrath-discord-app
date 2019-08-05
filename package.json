@@ -1,7 +1,7 @@
 {
   "name": "kildrath-bot",
-  "version": "2.0.0",
-  "description": "Discord bot that handle warcraft logs ids",
+  "version": "2.2.0",
+  "description": "Discord bot that bring World Of Warcraft to your Discord",
   "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
