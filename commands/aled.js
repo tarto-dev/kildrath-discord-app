@@ -29,12 +29,24 @@ exports.run = (client, message, args) => {
                 "value": `Permet d'avoir la liste des pets (+ prix de vente) du compte        _ex: ${client.config.prefix}pets Lachance_`
             },
             {
-                "name": "calendrier",
-                "value": `Indique les derniers runs de la guilde      _ex: ${client.config.prefix}calendrier_`
+                "name": "best `Pseudo` `Royaume, défaut Hyjal` `Région, défaut EU`",
+                "value": `Indique les 3 meilleurs try du joueur`
+            },
+            {
+                "name": "last `Pseudo` `Royaume, défaut Hyjal` `Région, défaut EU`",
+                "value": `Indique les 3 derniers try du joueur`
+            },
+            {
+                "name": "progress `Pseudo` `Royaume, défaut Hyjal` `Région, défaut EU`",
+                "value": `Indique le progress en raid du joueur **`
             },
             {
                 "name": "invite",
                 "value": "Permet d'inviter Kildrath chez vous !"
+            },
+            {
+                "name": "**",
+                "value": "Utilise la base de données Raider.io"
             }
         ]
     };
