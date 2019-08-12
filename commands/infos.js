@@ -3,7 +3,7 @@ exports.run = (client, message, args) => {
     const _ = require('lodash');
 
     const [nickname, realm = "Hyjal", region = "eu", ...rest] = args;
-    const apiFields = "raid_progression,mythic_plus_ranks,mythic_plus_best_runs,gear";
+    const apiFields = "raid_progression,mythic_plus_ranks,mythic_plus_best_runs,gear,mythic_plus_scores";
 
     getJSON(`https://raider.io/api/v1/characters/profile?region=${region}&realm=${realm}&name=${nickname}&fields=${apiFields}`, (err, rsp) => {
         if (typeof rsp == "undefined" || typeof rsp.raid_progression == "undefined") {
@@ -51,7 +51,6 @@ exports.run = (client, message, args) => {
             'dps': mranks.faction_class_dps === undefined ? 0 : mranks.faction_class_dps.realm,
         };
         let realmRankingsText = `Tank ${realmRankings.tank} - Healer ${realmRankings.healer} - DPS ${realmRankings.dps}`;
-        console.log(realmRankingsText);
 
         let classColor = {
             "Warrior": 12884332, //c79c6e
@@ -82,8 +81,8 @@ exports.run = (client, message, args) => {
                         "inline": true
                     },
                     {
-                        "name": "VH",
-                        "value": `${rsp.honorable_kills}`,
+                        "name": "R.IO",
+                        "value": `${rsp.mythic_plus_scores.all}`,
                         "inline": true
                     },
                     {
@@ -106,7 +105,7 @@ exports.run = (client, message, args) => {
                         "inline": true
                     },
                     {
-                        "name": "Ranking realm",
+                        "name": "Ranking (realm+faction based)",
                         "value": realmRankingsText,
                         "inline": true
                     }
