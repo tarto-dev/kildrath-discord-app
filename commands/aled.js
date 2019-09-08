@@ -37,6 +37,10 @@ exports.run = (client, message, args) => {
                 "value": `Indique les 3 derniers try du joueur`
             },
             {
+                "name": "vol `Pseudo` `Royaume, Hyjal par défaut` `Extension (bfa ou legion) défaut BFA`",
+                "value": `Donne l'état d'avancement du personnage pour débloquer le vol de l'extension`
+            },
+            {
                 "name": "progress `Pseudo` `Royaume, défaut Hyjal` `Région, défaut EU`",
                 "value": `Indique le progress en raid du joueur **`
             },
