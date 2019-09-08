@@ -10,4 +10,5 @@ exports.run = (client, message, args) => {
         message.channel.send(`https://www.mamytwink.com/guides/vol-dans-bfa-suivez-votre-progression#vol-${extension}-resultat-${realm}-${nickname}`);
     } else {
         message.channel.send(`https://www.mamytwink.com/guides/vol-legion-progression#vol-legion-resultat-${realm}-${nickname}`);
+    }
 }
