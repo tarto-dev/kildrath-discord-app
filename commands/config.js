@@ -40,4 +40,5 @@ exports.run = (client, message, args) => {
         // We can confirm everything's done to the client.
         message.channel.send(`Nouvelle configuration pour \`${prop}\` :\n\`${value.join(" ")}\``);
     }
+    message.react('👌');
 }
