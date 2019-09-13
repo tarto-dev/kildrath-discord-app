@@ -11,4 +11,5 @@ exports.run = (client, message, args) => {
     } else {
         message.channel.send(`https://www.mamytwink.com/guides/vol-legion-progression#vol-legion-resultat-${realm}-${nickname}`);
     }
+    message.react('👌');
 }
