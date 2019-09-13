@@ -5,5 +5,6 @@ exports.run = (client, message, args) => {
     }
 
     const [nickname, realm = "hyjal", region = "eu", ...rest] = args;
-    message.channel.send(`https://raider.io/characters/${region}/${realm}/${nickname}`)
+    message.channel.send(`https://raider.io/characters/${region}/${realm}/${nickname}`);
+    message.react('👌');
 }
