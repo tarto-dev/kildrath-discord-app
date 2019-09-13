@@ -7,4 +7,5 @@ exports.run = (client, message, args) => {
 
     const [nickname, realm = "hyjal", ...rest] = args;
     message.channel.send(`https://worldofwarcraft.com/fr-fr/character/${realm}/${nickname}`);
+    message.react('👌');
 }
