@@ -10,14 +10,11 @@ exports.run = (client, message, args) => {
 
     let moved = 0;
     membersWithRole.forEach(member => {
-        console.log(member);
         if (member.voiceChannel) {
-            console.log(member);
             member.setVoiceChannel(voiceChannel);
             moved++;
         }
     });
 
     message.react('👌');
-    message.channel.send(`J'ai bougé ${moved} glands avec ce role.`);
 }
