@@ -28,7 +28,7 @@ exports.run = async (client, message, args) => {
             },
             {
                 "name": ":dog: WoW Pets",
-                "value": `https://fr.wow-pets.com/character/${region}/${realm}/${nickname}`
+                "value": `Site en maintenance - alternative : https://magpie.wow-petguide.com`
             }
         ]
     };
