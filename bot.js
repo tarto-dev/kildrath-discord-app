@@ -16,7 +16,7 @@ client.settings = new Enmap({
 
 const defaultSettings = {
     bot_name: "Kildrath",
-    prefix: "~",
+    prefix: "?",
     realm: "Hyjal",
     wlogId: "345414",
     faction: "horde"
