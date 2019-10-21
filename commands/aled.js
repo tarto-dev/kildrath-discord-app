@@ -10,7 +10,11 @@ exports.run = (client, message, args) => {
             },
             {
                 "name": "scan `Pseudo` `Royaume, défaut Hyjal` `Région, défaut EU`",
-                "value": `Scan la personne indiquée.       _ex: ${client.config.prefix}scan Lachance_`
+                "value": `Donne des liens d'analyse pour le personnage indiqué.       _ex: ${client.config.prefix}scan Lachance_`
+            },
+            {
+                "name": "infos `Pseudo` `Royaume, défaut Hyjal` `Région, défaut EU`",
+                "value": `Scanne le compte.       _ex: ${client.config.prefix}infos Lachance_`
             },
             {
                 "name": "simc `Pseudo` `Royaume, défaut Hyjal` `Région, défaut EU`",
