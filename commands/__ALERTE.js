@@ -7,7 +7,7 @@ exports.run = async (client, message, args) => {
     client.guilds.map(guild => {
         const guildSet = client.settings.get(guild.id);
         if(guildSet.hasOwnProperty('annonces') && guildSet.annonces === "on") {
-            let notif_chan = guild.channels.find(channel => channel.name === (guildSet.annonces_chan || "general"));
+            let notif_chan = guild.channels.find(channel => channel.name === (guildSet.annonces_chan || "general" || "général" || "accueil"));
             notif_chan.send(""+args.join(' '))
         }
     });
