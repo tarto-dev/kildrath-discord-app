@@ -5,8 +5,20 @@ exports.run = async (client, message, args) => {
     message.delete();
 
     client.guilds.map(guild => {
-        let notif_chan = guild.channels.find(channel => channel.name === ("general" || "général" || "accueil" || "annonce" || "annonces"));
-        notif_chan.send(""+args.join(' '))
+        let channelID;
+        let channels = guild.channels;
+        channelLoop:
+        for (let c of channels) {
+            let channelType = c[1].type;
+            if (channelType === "text") {
+                channelID = c[0];
+                break channelLoop;
+            }
+        }
+
+    let channel = bot.channels.get(guild.systemChannelID || channelID);
+    channel.send(""+args.join(' '));
+
     });
 
     message.channel.send(`Message diffusé sur ${client.guilds.size} serveurs \n\n\n ${args.join(' ')}`);}
