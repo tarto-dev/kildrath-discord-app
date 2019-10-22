@@ -1,5 +1,4 @@
 exports.run = (client, message, args) => {
-    message.delete();
     const embed = {
         "title": "**Aide**",
         "color": 16762368,
