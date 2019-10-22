@@ -9,6 +9,10 @@ exports.run = (client, message, args) => {
                 "value": "\u200b"
             },
             {
+                "name": `support`,
+                "value": `Obtenir de l'aide, faire un retour ... [http://disboard.org/fr/server/485527398557810695]`
+            },
+            {
                 "name": "scan `Pseudo` `Royaume, défaut Hyjal` `Région, défaut EU`",
                 "value": `Donne des liens d'analyse pour le personnage indiqué.       _ex: ${client.config.prefix}scan Lachance_`
             },
