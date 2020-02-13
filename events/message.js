@@ -16,7 +16,7 @@ module.exports = (client, message) => {
         const Url = require('url');
         const urlRegex = /(http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?/g;
         let url = message.content.match(urlRegex);
-        let urlDesc = message.content.replace(urlRegex, ' ');
+        let urlDesc = message.content.replace(urlRegex, ' ').trim();
 
         if (url === null) return;
 
