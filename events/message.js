@@ -16,6 +16,7 @@ module.exports = (client, message) => {
         const Url = require('url');
         const urlRegex = /(http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?/g;
         let url = message.content.match(urlRegex);
+        let urlDesc = message.content.replace(urlRegex, ' ');
 
         if (url === null) return;
 
@@ -25,7 +26,7 @@ module.exports = (client, message) => {
         if (reportId === null || reportId === '') return;
 
         const embed = {
-            "title": `** Nouveau logs **`,
+            "title": `** ${urlDesc} **`,
             "color": 4886754,
             "fields": [
                 {
