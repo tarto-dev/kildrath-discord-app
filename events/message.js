@@ -20,12 +20,13 @@ module.exports = (client, message) => {
         if (url === null) return;
 
         const logurl = Url.parse(url[0]);
+        const logDetails = url.shift(0, 1);
         let reportId = logurl.path;
 
         if (reportId === null || reportId === '') return;
 
         const embed = {
-            "title": `**Nouveaux logs**`,
+            "title": `** ${logDetails.join(' ')} **`,
             "color": 4886754,
             "fields": [
                 {
