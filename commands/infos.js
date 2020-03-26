@@ -15,7 +15,7 @@ exports.run = (client, message, args) => {
             'crucible-of-storms',
             'battle-of-dazaralor',
             'uldir',
-            'antorus-the-burning-throne'
+            'nyalotha-the-waking-city',
         ];
 
         const raidOrdersShort = {
@@ -23,11 +23,10 @@ exports.run = (client, message, args) => {
             "crucible-of-storms": "CoS",
             "battle-of-dazaralor": "BoD",
             "uldir": "Uldir",
-            "antorus-the-burning-throne": "Antorus"
+            "nyalotha-the-waking-city": "NYA"
         };
 
         let progress = rsp.raid_progression || [];
-
         let userProgress = [];
         _.forEach(raidOrders, (el) => {
             let nm = progress[el].normal_bosses_killed || 0,
@@ -37,18 +36,28 @@ exports.run = (client, message, args) => {
                 userProgress.push(raidOrdersShort[el] + " - " + progress[el].summary);
             }
         });
-        const userProgressOutput = userProgress[0];
+
+        const userProgressOutput = userProgress[userProgress.length > 1 ? userProgress.length - 1 : "NA"];
 
         const bestRuns = rsp.mythic_plus_best_runs;
-        let bestRunOutput = `${bestRuns[0].short_name} ${bestRuns[0].mythic_level} ${_.repeat('*', bestRuns[0].num_keystone_upgrades)}`;
+        let bestRunOutput = [];
 
+        if(bestRuns.length) {
+            bestRunOutput[0] = `${bestRuns[0].short_name} ${bestRuns[0].mythic_level} ${_.repeat('*', bestRuns[0].num_keystone_upgrades)}`;
+            bestRunOutput[1] = `${bestRuns[1].short_name} ${bestRuns[1].mythic_level} ${_.repeat('*', bestRuns[1].num_keystone_upgrades)}`;
+            bestRunOutput[2] = `${bestRuns[2].short_name} ${bestRuns[2].mythic_level} ${_.repeat('*', bestRuns[2].num_keystone_upgrades)}`;
+        } else {
+            bestRunOutput[0] = "NA";
+            bestRunOutput[1] = "NA";
+            bestRunOutput[2] = "NA";
+        }
 
         //`Tank ${rsp.mythic_plus_ranks.faction_class_tank.realm} - Healer ${rsp.mythic_plus_ranks.faction_class_healer.realm} - Dps ${rsp.mythic_plus_ranks.faction_class_dps.realm}`,
         const mranks = rsp.mythic_plus_ranks;
         let realmRankings = {
-            'tank': mranks.faction_class_tank === undefined ? 0 : mranks.faction_class_tank.realm,
-            'healer': mranks.faction_class_healer === undefined ? 0 : mranks.faction_class_healer.realm,
-            'dps': mranks.faction_class_dps === undefined ? 0 : mranks.faction_class_dps.realm,
+            'tank': mranks.faction_class_tank === undefined ? "NA" : mranks.faction_class_tank.realm,
+            'healer': mranks.faction_class_healer === undefined ? "NA" : mranks.faction_class_healer.realm,
+            'dps': mranks.faction_class_dps === undefined ? "NA" : mranks.faction_class_dps.realm,
         };
         let realmRankingsText = `Tank ${realmRankings.tank} - Healer ${realmRankings.healer} - DPS ${realmRankings.dps}`;
 
@@ -91,13 +100,27 @@ exports.run = (client, message, args) => {
                         "inline": true
                     },
                     {
-                        "name": "CLÉS ET RAIDS",
-                        "value": "\u200b"
+                        "name": "====================================",
+                        "value": "BEST MYTHIC KEYSTONES"
                     },
                     {
-                        "name": "Best run",
-                        "value": `${bestRunOutput}`,
+                        "name": "# 1",
+                        "value": `${bestRunOutput[0]}`,
                         "inline": true
+                    },
+                    {
+                        "name": "# 2",
+                        "value": `${bestRunOutput[1]}`,
+                        "inline": true
+                    },
+                    {
+                        "name": "# 3",
+                        "value": `${bestRunOutput[2]}`,
+                        "inline": true
+                    },
+                    {
+                        "name": "====================================",
+                        "value": "RAIDS"
                     },
                     {
                         "name": "Best progress",
@@ -107,11 +130,31 @@ exports.run = (client, message, args) => {
                     {
                         "name": "Ranking (realm+faction based)",
                         "value": realmRankingsText,
+                    },
+                    {
+                        "name": "====================================",
+                        "value": "QUICK LINKS"
+                    },
+                    {
+                        "name": ":shield: Armory",
+                        "value": `[Open Armory](https://worldofwarcraft.com/fr-fr/character/${realm}/${nickname})`,
                         "inline": true
-                    }
+                    },
+                    {
+                        "name": ":gear: Raider.io",
+                        "value": `[Open Raider.io](https://raider.io/characters/${region.toLowerCase()}/${realm.toLowerCase()}/${nickname})`,
+                        "inline": true
+                    },
+                    {
+                        "name": ":crossed_swords: Wipefest",
+                        "value": `[Open Wipefest](https://www.wipefest.net/character/${nickname}/${realm}/${region})`,
+                        "inline": true
+                    },
                 ]
             }
         };
+
+        console.log(JSON.stringify(embed));
         message.channel.send(embed);
         message.react('👌');
     });

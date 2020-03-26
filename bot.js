@@ -21,7 +21,12 @@ const defaultSettings = {
     wlogId: "345414",
     faction: "horde"
 };
-client.defaultSettings = defaultSettings;
+
+var extend = require('util')._extend;
+var cfg = extend({}, defaultSettings);
+extend(cfg,  config);
+client.defaultSettings = cfg;
+
 fs.readdir("./events/", (err, files) => {
     if (err) return console.error(err);
     files.forEach(file => {
@@ -46,5 +51,10 @@ fs.readdir("./commands/", (err, files) => {
         client.commands.set(commandName, props);
     });
 });
+
+
+client.on("error", (e) => console.error(e));
+client.on("warn", (e) => console.warn(e));
+client.on("debug", (e) => console.info(e));
 
 client.login(config.token);
