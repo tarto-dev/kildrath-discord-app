@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
             },
             {
                 "name": `support`,
-                "value": `Obtenir de l'aide, faire un retour ... [http://disboard.org/fr/server/485527398557810695]`
+                "value": `Obtenir de l'aide, faire un retour ... [https://disboard.org/fr/server/485527398557810695]`
             },
             {
                 "name": "scan `Pseudo` `Royaume, défaut Hyjal` `Région, défaut EU`",
