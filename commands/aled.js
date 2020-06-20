@@ -13,7 +13,7 @@ exports.run = (client, message, args) => {
             },
             {
                 "name": "scan `Pseudo` `Royaume, défaut Hyjal` `Région, défaut EU`",
-                "value": `Donne des liens d'analyse pour le personnage indiqué.       _ex: ${client.config.prefix}scan Lachance_`
+                "value": `Retourne la page Simple Armory du joueur indiqué.       _ex: ${client.config.prefix}scan Lachance_`
             },
             {
                 "name": "infos `Pseudo` `Royaume, défaut Hyjal` `Région, défaut EU`",
